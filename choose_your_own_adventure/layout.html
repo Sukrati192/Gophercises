@@ -1,0 +1,10 @@
+<body style="background-color: #FBF4E9;"><h1 style="text-align: center; margin-top: 100; margin-bottom: 50;">{{.Title}}</h1>
+{{range .Story}}
+<p style="margin-left: 30%; margin-right: 30%; line-height: 200%;">{{.}}</p>
+{{end}}<br>
+<ul>
+{{range .Options}}
+<li style="margin-left: 30%; margin-right: 30%; line-height: 1.6;"><a href="/{{.Arc}}" style="color: #1DB9C3;">{{.Text}}</a></li><br>
+{{end}}
+</ul>
+</body>

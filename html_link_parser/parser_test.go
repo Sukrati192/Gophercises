@@ -23,8 +23,8 @@ func Test_parseLinkAndTextFromHtml(t *testing.T) {
 	want6 := []Links{{"/dog", "text inside dog link"}}
 	file7 := "ex7.html"
 	want7 := []Links{{"/dog", "Something in a span Text not in a span Bold text!"}}
-	//file8 := "ex8.html"
-	//want8 := []Links{{"#", "Something here nested dog link"}}
+	file8 := "ex8.html"
+	want8 := []Links{{"#", "Something here nested dog link"}}
 	tests := []struct {
 		name string
 		args args
@@ -37,7 +37,7 @@ func Test_parseLinkAndTextFromHtml(t *testing.T) {
 		{"test5", args{file5}, want5},
 		{"test6", args{file6}, want6},
 		{"test7", args{file7}, want7},
-		//{"test8", args{file8}, want8},
+		{"test8", args{file8}, want8}, // why tc8 fails: https://www.w3.org/TR/html401/struct/links.html#h-12.2.2
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

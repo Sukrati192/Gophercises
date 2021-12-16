@@ -1,4 +1,4 @@
-module html_link_parser
+module github.com/Sukrati192/Gophercises/html_link_parser
 
 go 1.16
 

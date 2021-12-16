@@ -1,4 +1,4 @@
-package main
+package parser
 
 import (
 	"fmt"
@@ -15,16 +15,12 @@ type Links struct {
 	Text string
 }
 
-func main() {
-	var inputFile string
-	fmt.Printf("Enter the html file to be parsed.\n")
-	fmt.Scanln(&inputFile)
-	links := ParseLinkAndTextFromHtml(inputFile)
-	fmt.Print(links)
-}
-
 func ParseLinkAndTextFromHtml(inputfile string) []Links {
 	file := readFile(inputfile)
+	return ParseLinksFromReader(file)
+}
+
+func ParseLinksFromReader(file io.Reader) []Links {
 	doc, err := html.Parse(file)
 	if err != nil {
 		log.Fatal(err)
